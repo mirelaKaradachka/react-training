@@ -1,0 +1,20 @@
+{
+  "name": "03-es-es6-lab",
+  "version": "1.0.0",
+  "description": "ES6+ demos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "keywords": [
+    "es6",
+    "js",
+    "demo"
+  ],
+  "author": "Mirela Karadachka",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
