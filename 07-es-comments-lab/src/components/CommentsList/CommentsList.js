@@ -1,26 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Comment } from "../../model/comment.model";
-import CommentsItem from "../CommentsItem/CommentsItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { CommentType } from '../../model/comment.model';
+import CommentItem from '../CommentItem/CommentItem';
 
-const CommentsList = ({ comments, selected, ...rest }) => {
-  return (
-    <div className="CommentsList">
-      {comments.map((comm) => (
-        <CommentsItem
-          key={comm.id}
-          comment={comm}
-          isActive={selected && selected.id === comm.id}
-        />
-      ))}
-    </div>
-  );
-};
+function CommentsList({ comments, selected, ...rest }) {
+    return (
+        <div className="CommentsList">
+            {
+                comments.map(comm => (
+                    <CommentItem key={comm.id} comment={comm}
+                        isActive={selected && selected.id === comm.id} {...rest} />
+                ))
+            }
+        </div>
+    )
+}
+
 
 CommentsList.propTypes = {
-  comments: PropTypes.arrayOf(Comment),
-  selected: PropTypes.instanceOf(Comment),
-  onChangeSelected: PropTypes.func,
-};
+    comments: PropTypes.arrayOf(CommentType).isRequired,
+    selected: CommentType,
+    onChangeSelected: PropTypes.func
+}
 
-export default CommentsList;
+export default CommentsList
+
